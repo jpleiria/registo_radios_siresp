@@ -35,13 +35,13 @@
       <form id="radio-form" novalidate>
         <input id="record-id" type="hidden">
         <div class="form-grid">
-          <label>Rádio Nº *<input id="portableNumber" required inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" placeholder="Ex.: 0012" title="Introduza exatamente quatro algarismos"><small class="field-hint">Sugestão automática; pode alterar manualmente.</small></label>
+          <label>Rádio Nº <span id="portable-number-required">*</span><input id="portableNumber" required inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" placeholder="Ex.: 0012" title="Introduza exatamente quatro algarismos"><small id="portable-number-hint" class="field-hint">Sugestão automática; pode alterar manualmente.</small></label>
           <label>Tipo *<span class="type-select-row"><span id="type-icon-preview" class="type-icon-preview" aria-hidden="true"><img src="radio-portatil.png" alt=""></span><select id="type" required><option value="Portátil">Portátil</option><option value="Móvel">Móvel</option><option value="Base">Base</option></select></span></label>
           <label>ISSI *<input id="issi" required inputmode="numeric" maxlength="30" placeholder="Ex.: 268000101"></label>
           <label>S/N *<input id="serialNumber" required maxlength="80" placeholder="Número de série"></label>
           <label>Marca *<input id="brand" list="brand-options" required maxlength="80" placeholder="Ex.: Sepura"></label>
           <label>Modelo *<input id="model" list="model-options" required maxlength="80" placeholder="Ex.: SC21"></label>
-          <label>Alocado a *<input id="allocatedTo" list="allocated-options" required maxlength="120" placeholder="Ex.: CBSL, ULPC..."></label>
+          <label>Alocado a *<select id="allocatedTo" required><option value="CBSL">CBSL</option><option value="SMPC">SMPC</option><option value="ULPC">ULPC</option><option value="BVM">BVM</option><option value="BVL">BVL</option><option value="BVO">BVO</option><option value="CVP">CVP</option></select></label>
           <label>Estado *<select id="status" required><option value="Operacional">Operacional</option><option value="Manutenção">Manutenção</option><option value="Reserva">Reserva</option><option value="Abatido">Abatido</option></select></label>
           <label>Localização / Viatura *<input id="location" list="location-options" required maxlength="120" placeholder="Ex.: Quartel Central / VUCI 01"></label>
           <label>Última manutenção<input id="lastMaintenance" type="date"></label>
