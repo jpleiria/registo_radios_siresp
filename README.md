@@ -1,6 +1,8 @@
-# Registo Rádios Comunicações SIRESP — CBSLeiria
+# Registo Rádios Comunicações SIRESP/ROB — CBSLeiria
 
-Aplicação estática para inventário de equipamentos rádio SIRESP. Não requer instalação, servidor nem conta de utilizador.
+Aplicação estática para inventário de equipamentos rádio SIRESP e ROB. Não requer instalação, servidor nem conta de utilizador.
+
+Os botões **SIRESP** e **ROB** separam os respetivos resumos, novos registos, listagens, exportações e conferências de inventário. Os registos anteriores à introdução desta separação são mantidos como SIRESP. Em ROB, o ISSI não é utilizado e a alocação fica fixa em CBSL. Em ambos os sistemas, o inventário apresenta apenas equipamentos alocados à CBSL.
 
 Inclui painel de resumo, alertas de manutenção, histórico de avarias, etiquetas QR, conferência de inventário, proteção opcional por PIN, importação CSV/Excel e exportações configuráveis.
 

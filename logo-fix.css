@@ -86,6 +86,46 @@
   font-weight: 400;
 }
 
+.system-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  border: 1px solid #59636d;
+  border-radius: 8px;
+  background: #111920;
+}
+
+.system-button {
+  min-width: 76px;
+  padding: .5rem .8rem;
+  border-color: transparent;
+  background: transparent;
+  color: #d7dce1;
+}
+
+.system-button:hover {
+  background: #ffffff16;
+}
+
+.system-button.active {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 1px 4px #0005;
+}
+
+.site-header .header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+body[data-system="ROB"] .issi-column {
+  display: none;
+}
+
+body[data-system="ROB"] .issi-column::after {
+  content: none;
+}
+
 @media (max-width: 850px) {
   .form-grid {
     grid-template-columns: 1fr;
