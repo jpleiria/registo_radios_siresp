@@ -126,6 +126,40 @@ body[data-system="ROB"] .issi-column::after {
   content: none;
 }
 
+.firebase-sync-status {
+  flex: 1 0 100%;
+  color: #cbd3da;
+  text-align: right;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+a.button-like {
+  text-decoration: none;
+}
+
+.firebase-sync-status.error,
+.inline-error {
+  color: #ffb6ae;
+}
+
+#firebase-auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+#firebase-auth-dialog .inline-error {
+  min-height: 1.2em;
+  margin: 0;
+  color: #9a211c;
+  font-weight: 700;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
 @media (max-width: 850px) {
   .form-grid {
     grid-template-columns: 1fr;

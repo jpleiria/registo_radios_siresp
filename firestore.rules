@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == 'x4CmmW5n2ZYIMyuKMVWreMoa6pD2';
+    }
+
+    function isViewer() {
+      return request.auth != null
+        && request.auth.uid == 'VCIejgDdNCgiDpuv02SAPchgGvT2';
+    }
+
+    match /publicacoes/siresp {
+      allow read: if isAdmin() || isViewer();
+
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly([
+          'schemaVersion',
+          'updatedAt',
+          'updatedByUid',
+          'recordCount',
+          'records'
+        ])
+        && request.resource.data.schemaVersion == 1
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedByUid == request.auth.uid
+        && request.resource.data.recordCount is int
+        && request.resource.data.records is list
+        && request.resource.data.recordCount == request.resource.data.records.size()
+        && request.resource.data.recordCount >= 0
+        && request.resource.data.recordCount <= 2000;
+
+      allow delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
