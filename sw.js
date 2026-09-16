@@ -1,4 +1,4 @@
-const CACHE='radios-gestao-v28';
+const CACHE='radios-gestao-v29';
 const ASSETS=['./','./index.html','./styles.css','./logo-fix.css','./features.css','./app-v2.js','./manifest.webmanifest','./jszip.min.js','./qrcode.js','./logo.png','./radio-portatil.png','./radio-base.png'];
 
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
