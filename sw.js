@@ -1,5 +1,5 @@
-const CACHE='radios-gestao-v33';
-const ASSETS=['./','./index.html','./styles.css','./logo-fix.css','./features.css','./app-v2.js','./manifest.webmanifest','./jszip.min.js','./qrcode.js','./logo.png','./radio-portatil.png','./radio-base.png'];
+const CACHE='radios-gestao-v38';
+const ASSETS=['./motorola.webp','./sepura.webp','./anepc.webp','./leiria-brasao.webp','./','./index.html','./styles.css','./logo-fix.css','./features.css','./app-v2.js','./manifest.webmanifest','./jszip.min.js','./qrcode.js','./logo.png','./radio-portatil.png','./radio-base.png'];
 
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>(key.startsWith('radios-siresp-')||key.startsWith('radios-gestao-'))&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
