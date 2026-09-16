@@ -61,7 +61,7 @@
 
   function compareRecords(a,b){
     const av=String(a[sort.key]??'').trim(),bv=String(b[sort.key]??'').trim();
-    if(sort.key==='portableNumber'&&(!av||!bv)){if(!av&&bv)return 1;if(av&&!bv)return -1;return 0}
+    if(sort.key==='portableNumber'&&(!av||!bv)){if(!av&&bv)return 1;if(av&&!bv)return -1;return String(a.type??'').localeCompare(String(b.type??''),'pt',{numeric:true,sensitivity:'base'})}
     return av.localeCompare(bv,'pt',{numeric:true,sensitivity:'base'})*sort.dir;
   }
   function filtered(){const q=normalized($('filter-search').value),tp=normalized($('filter-type').value),st=$('filter-status').value,loc=normalized($('filter-location').value),al=normalized($('filter-allocated').value),br=normalized($('filter-brand').value),mo=normalized($('filter-model').value);return activeRecords().filter(r=>{const all=normalized(fieldsForSystem().map(k=>r[k]).join(' '));return(!$('filter-network').value||r.network===$('filter-network').value)&&(!q||all.includes(q))&&(!tp||normalized(r.type)===tp)&&(!st||r.status===st)&&(!loc||normalized(r.location).includes(loc))&&(!al||normalized(r.allocatedTo).includes(al))&&(!br||normalized(r.brand).includes(br))&&(!mo||normalized(r.model).includes(mo))}).sort(compareRecords)}
