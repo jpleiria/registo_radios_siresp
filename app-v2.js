@@ -27,8 +27,8 @@
   function normalized(value){return String(value||'').trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
   function escapeHtml(value=''){return String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
 function listLogoHtml(name){
-  const logos={motorola:['motorola.webp','Motorola'],sepura:['sepura.webp','Sepura'],anepc:['anepc.webp','ANEPC'],municipal:['leiria-brasao.webp','Município de Leiria']};
-  const logo=logos[name];if(name==='municipal')return `<span class="municipal-emblem"><img class="list-logo" src="${logo[0]}" alt="${logo[1]}" title="${logo[1]}"></span>`;return logo?`<img class="list-logo list-logo-${name}" src="${logo[0]}" alt="${logo[1]}" title="${logo[1]}">`:'';
+  const logos={motorola:['motorola.webp','Motorola',90,20],sepura:['sepura.webp','Sepura',64,20],anepc:['anepc.webp','ANEPC',24,24],municipal:['leiria-brasao.webp','Município de Leiria',24,26]};
+  const logo=logos[name];return logo?`<img class="list-logo list-logo-${name}" src="${logo[0]}" alt="${logo[1]}" title="${logo[1]}" width="${logo[2]}" height="${logo[3]}" style="width:${logo[2]}px;height:${logo[3]}px;object-fit:contain;vertical-align:middle;flex-shrink:0">`:'';
 }
 function brandCellHtml(value){const key=normalized(value),icon=key==='motorola'?'motorola':key==='sepura'?'sepura':'';return icon?`<span class="list-with-logo">${listLogoHtml(icon)}</span>`:escapeHtml(value)}
 function networkCellHtml(value){const key=normalized(value),icons=key==='dupla'?['municipal','anepc']:[key];return `<span class="list-with-logo">${icons.map(listLogoHtml).join('')}<span>${escapeHtml(value)}</span></span>`}
