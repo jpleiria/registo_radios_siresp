@@ -24,3 +24,6 @@ body[data-system='ROB'] #records-body td:nth-child(9){white-space:normal;overflo
 .list-logo-sepura{width:64px;height:20px}
 .list-logo-anepc{width:24px;height:24px}
 .list-logo-municipal{width:24px;height:26px}
+
+/* A coluna de ações deve reservar espaço para os três botões. */
+#records-body td.actions{min-width:205px}
