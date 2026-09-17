@@ -26,4 +26,8 @@ body[data-system='ROB'] #records-body td:nth-child(9){white-space:normal;overflo
 .list-logo-municipal{width:24px;height:26px}
 
 /* A coluna de ações deve reservar espaço para os três botões. */
-#records-body td.actions{min-width:205px}
+#records-body td.actions{min-width:112px;padding-left:.45rem;padding-right:.45rem}
+.action-icon{width:28px;height:28px;padding:0;font-size:1.05rem;line-height:1}
+.danger-icon{color:#9a211c}
+#list-panel table th:last-child,#records-body td.actions{position:sticky;right:0;z-index:1;background:#fff;box-shadow:-2px 0 4px #18212b14}
+#list-panel table th:last-child{z-index:2;background:#29333d}
