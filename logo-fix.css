@@ -118,6 +118,13 @@
   justify-content: flex-end;
 }
 
+/* Mantém o título com a mesma quebra de linha em SIRESP e ROB. */
+@media (min-width: 851px) {
+  .site-header > div:nth-child(2) {
+    flex: 0 0 440px;
+  }
+}
+
 body[data-system="ROB"] .issi-column {
   display: none;
 }
